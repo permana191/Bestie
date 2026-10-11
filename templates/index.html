@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffe1ec">
+
+  <title>Happy Birthday, Bestieee ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}"
+  >
+</head>
+
+<body>
+  <div
+    class="sparkle-layer"
+    id="sparkleLayer"
+    aria-hidden="true"
+  ></div>
+
+  <main class="app-shell">
+
+    <header class="topline">
+      <span class="tiny-heart">♥</span>
+      <span>little letter for you</span>
+      <span class="tiny-heart">♥</span>
+    </header>
+
+   <section class="intro-screen" id="introScreen">
+
+        <p class="eyebrow">A LITTLE SOMETHING FOR YOU</p>
+
+        <h1>
+            To my<br>
+            <em>dearest bestie.</em>
+        </h1>
+
+        <p class="intro-copy">
+            A little letter filled with love,<br>
+            warm wishes, and precious memories. ♡
+        </p>
+
+        <button
+            class="envelope-button"
+            id="openEnvelope"
+            aria-label="Open your birthday letter"
+            type="button"
+        >
+            <span class="envelope-back"></span>
+
+            <span class="letter-peek">
+                <span>for my bestie</span>
+                <b>♡</b>
+            </span>
+
+            <span class="envelope-front"></span>
+
+            <span class="envelope-flap"></span>
+
+            <span class="wax-seal">♥</span>
+        </button>
+
+        <p class="tap-hint">
+            <span class="pulse-dot"></span>
+            A little surprise is waiting for you
+        </p>
+
+        <p class="mini-label" style="margin-top: 22px;">
+            MADE WITH LOVE, JUST FOR YOU ♡
+        </p>
+
+    </section>
+
+    <!-- HALAMAN SURAT -->
+    <section
+      class="letter-screen hidden"
+      id="letterScreen"
+    >
+
+      <div class="section-heading">
+        <span class="mini-label">
+          A LETTER FROM MY HEART
+        </span>
+
+        <h2>
+          Happy birthday,<br>
+          <em>bestieee.</em> ♡
+        </h2>
+
+        <div class="divider-heart">
+          <span></span>
+          ♥
+          <span></span>
+        </div>
+      </div>
+
+      <article class="letter-card">
+
+        <p class="letter-greeting">
+          Happy birthday to my bestieeeee, 🥳🫶🏻
+        </p>
+
+        <!-- Teks lengkap dimasukkan melalui JavaScript -->
+        <div
+          id="letterText"
+          class="letter-text"
+          aria-live="polite"
+        ></div>
+
+        <p class="letter-signoff">
+          Love you always ddeeee 🫶🏻
+        </p>
+
+      </article>
+
+      <div class="button-row">
+
+        <button
+          class="soft-button"
+          id="memoriesButton"
+        >
+          Lihat kenangan <span>♡</span>
+        </button>
+
+        <button
+          class="text-button"
+          id="backToEnvelope"
+        >
+          Kembali ke awal
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- HALAMAN KENANGAN DAN MUSIK -->
+    <section
+      class="memories-screen hidden"
+      id="memoriesScreen"
+    >
+
+      <div class="section-heading">
+
+        <span class="mini-label">
+          LITTLE MOMENTS, BIG MEMORIES
+        </span>
+
+        <h2>
+          Kenangan <em>kita.</em>
+        </h2>
+
+        <p class="section-subtitle">
+          Hal sederhana yang semoga selalu punya tempat di hati.
+        </p>
+
+      </div>
+
+      <!-- TIGA FOTO DUMMY -->
+      <div class="photo-grid">
+
+        <figure class="photo-card tilt-left">
+          <img
+            src="{{ url_for('static', filename='images/1.jpeg') }}"
+            alt="Foto dummy langit senja"
+          >
+          <figcaption>
+            <span>♡</span> little moments
+          </figcaption>
+        </figure>
+
+        <figure class="photo-card tilt-right">
+          <img
+            src="{{ url_for('static', filename='images/2.jpeg') }}"
+            alt="Foto dummy persahabatan"
+          >
+          <figcaption>
+            <span>♡</span> glad we met
+          </figcaption>
+        </figure>
+
+        <figure class="photo-card tilt-left">
+          <img
+            src="{{ url_for('static', filename='images/3.jpeg') }}"
+            alt="Foto dummy bunga pink"
+          >
+          <figcaption>
+            <span>♡</span> more memories to come
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <!-- PEMUTAR MUSIK -->
+      <div class="music-card">
+
+        <div class="music-cover">
+          <span>♫</span>
+          <small>our little song</small>
+        </div>
+
+        <div class="music-info">
+
+          <p class="music-kicker">
+            A SONG FOR YOU
+          </p>
+
+          <h3>Semua dirayakan</h3>
+
+          <p>Nadin</p>
+
+          <div class="audio-note">
+            Lagu akan dicoba diputar otomatis setelah amplop dibuka.
+          </div>
+
+          <audio
+            id="birthdaySong"
+            preload="auto"
+            controls
+            loop
+          >
+            <source
+              src="{{ url_for('static', filename='audio/lagu.mp3') }}"
+              type="audio/mpeg"
+            >
+
+            Browser kamu tidak mendukung audio.
+          </audio>
+
+        </div>
+
+      </div>
+
+      <p class="closing-note">
+        “Semoga bahagia selalu menemukan jalan pulang kepadamu.”
+        <span>♡</span>
+      </p>
+
+      <div class="button-row centered">
+
+        <button
+          class="soft-button"
+          id="backToLetter"
+        >
+          Baca surat lagi <span>↗</span>
+        </button>
+
+      </div>
+
+    </section>
+
+    <footer>
+      made with a little love <span>♥</span>
+    </footer>
+
+  </main>
+
+  <script
+    src="{{ url_for('static', filename='js/script.js') }}"
+  ></script>
+
+</body>
+</html>
